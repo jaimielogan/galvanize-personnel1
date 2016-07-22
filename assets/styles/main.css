@@ -1,1 +1,57 @@
 /* add some styles */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Harmattan', sans-serif;
+}
+
+h1, container, div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  border-bottom: 1px solid black;
+  font-size: 35px;
+}
+
+container, div {
+  font-size:20px;
+}
+
+div {
+  border-bottom: 1px solid black;
+}
+
+.image {
+  padding-top: 10px;
+}
+
+#first, #roles, .image{
+  margin-bottom: 20px;
+}
+
+#last {
+  margin-bottom: 20px;
+}
+
+.roles {
+  font-size: 25px;
+}
+
+#first, #last {
+  padding-right:50px;
+  font-size: 20px;
+  font-family: 'Harmattan', sans-serif;
+}
+
+.save {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.save:hover {
+  background-color: lightgrey;
+}

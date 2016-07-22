@@ -3,8 +3,44 @@
     <head>
         <meta charset="utf-8">
         <title>Galvanize Personnel</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="./assets/styles/main.css" >
+        <link href="https://fonts.googleapis.com/css?family=Harmattan" rel="stylesheet">
     </head>
     <body>
-        
+      <h1>Galvanize Personnel</h1>
+      <container>
+      <form class="userInput" action="index.html" method="post">
+        <!-- First & Last Name -->
+        <div class ="nameInput">
+        <label for="first"> First Name </label>
+        <input type = "text" id = "first" placeholder = "Jane">
+        <label for="last"> Last Name </label>
+        <input type = "text" id = "last" placeholder="Smith">
+      </div>
+        <!-- Role -->
+        <div>
+        <label for="roles">Select Your Role Below:</label>
+        <select class = "roles" id = "roles">
+          <option value = "select" disabled selected> -- Select Your Role --  </option>
+          <option value = "Tank">Tank</option>
+          <option value = "Support">Support</option>
+          <option value = "Defense">Defense</option>
+          <option value = "Attack">Attack</option>
+        </select>
+      </div>
+        <!-- Image Placeholder -->
+        <div>
+        <img class = "image" src="http://placehold.it/150x150">
+        </div>
+        <!-- Submit -->
+        <div>
+        <input type = "submit" value = "Save" class = "save">
+      </div>
+      </form>
+    </container>
+      <p class = "save-status">
+      </p>
+    <script src = "./assets/scripts/app.js"></script>
     </body>
 </html>
