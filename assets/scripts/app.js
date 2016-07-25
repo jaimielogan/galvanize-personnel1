@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
   var userRole = $('.roles').text();
-  
+
   $.ajax({
       url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/roles',
       error: function(err) {console.error(err);},
@@ -31,15 +31,15 @@ $(document).ready(function(){
         // Submit Button
         $("form").submit(function(event){
           event.preventDefault();
-          console.log(userRole);
-          $(".save-status").text("Success!").fadeIn(2000).delay(5000).fadeOut(2000);
           $.ajax({
             type: "POST",
             url: "https://galvanize-student-apis.herokuapp.com/gpersonnel/users",
             data: {
               firstName: $("#first").val(),
               lastName: $("#last").val(),
-              role: userRole }
+              role: userRole
+            },
+            success: $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000)
           });
         });
 
