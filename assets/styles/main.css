@@ -14,11 +14,11 @@ h1, container, div{
 
 h1 {
   border-bottom: 1px solid black;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 container, div {
-  font-size:20px;
+  font-size:15px;
 }
 
 div {
@@ -27,18 +27,20 @@ div {
 
 .image {
   padding-top: 10px;
+  width: 200px;
+  height:200px;
 }
 
 #first, #roles, .image{
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 #last {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .roles {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 #first, #last {
@@ -48,10 +50,17 @@ div {
 }
 
 .save {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .save:hover {
   background-color: lightgrey;
+}
+
+.save-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px; 
 }

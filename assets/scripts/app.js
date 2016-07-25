@@ -25,21 +25,21 @@ $(document).ready(function(){
         });
 
         // Submit Button
-        $(".save").submit(function(event){
-          // event.preventDefault();
-          // $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
+        $("form").submit(function(event){
+          event.preventDefault();
+          $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
           $.ajax({
             type: "POST",
             url: "http://galvanize-student-apis.herokuapp.com/gpersonnel/users",
             data: { firstName: $("#first").val(), lastName: $("#last").val(), role: userRole },
-            success: function(data){
-              alert(data);
+            success: function(){
+              // alert(data);
               $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
             }
 
           });
-          event.preventDefault();
-          $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
+          // event.preventDefault();
+          // $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
         });
 
 
