@@ -1,10 +1,14 @@
 // Your code here!
+
 $(document).ready(function(){
+  var userRole = $('.roles').text();
+  
   $.ajax({
-      url: 'http://galvanize-student-apis.herokuapp.com/gpersonnel/roles',
+      url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/roles',
       error: function(err) {console.error(err);},
       method: 'GET',
       success: function(data) {
+
 
 // Working on dynamically loading in the data from the API
         for(var i of data){
@@ -15,7 +19,7 @@ $(document).ready(function(){
        }
 
         $('.roles').change(function() {
-          var userRole = $('.roles :selected').text();
+          userRole = $('.roles :selected').text();
           for (var i = 0; i < data.length; i++) {
             if (data[i].title === userRole) {
               // Update Image
@@ -27,19 +31,16 @@ $(document).ready(function(){
         // Submit Button
         $("form").submit(function(event){
           event.preventDefault();
-          $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
+          console.log(userRole);
+          $(".save-status").text("Success!").fadeIn(2000).delay(5000).fadeOut(2000);
           $.ajax({
             type: "POST",
-            url: "http://galvanize-student-apis.herokuapp.com/gpersonnel/users",
-            data: { firstName: $("#first").val(), lastName: $("#last").val(), role: userRole },
-            success: function(){
-              // alert(data);
-              $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
-            }
-
+            url: "https://galvanize-student-apis.herokuapp.com/gpersonnel/users",
+            data: {
+              firstName: $("#first").val(),
+              lastName: $("#last").val(),
+              role: userRole }
           });
-          // event.preventDefault();
-          // $(".save-status").text("Success!").fadeIn(2000).fadeOut(2000);
         });
 
 
